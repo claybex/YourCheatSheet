@@ -1,23 +1,36 @@
-* Python
+# Python
 
-** Linked Lists
-
-** Hash Tables
+## Linked Lists
 
 
+## Hash Tables
 
-* Golang
+```
+from collections import LinkedList
 
-** Slices
+my_list = LinkedList()
+my_list.append(1)
+my_list.append(2)
+my_list.append(3)
 
-** Concurrency
+print(my_list)
+```
 
-*** Goroutines
 
-*** Channels
+# Golang
 
-*** Workers
+## Slices
 
-** Generics
+## Concurrency
+
+### Goroutines
+
+### Channels
+
+### Workers
+
+#### Atomic Counters
+
+## Generics
 
 
