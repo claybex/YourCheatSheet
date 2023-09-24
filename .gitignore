@@ -1,6 +1,9 @@
 .git
 venv
-docs.html
+dist
+docs.*
 __pycache__/
 *.py[cod]
 *$py.class
+*.egg-info
+*.html
