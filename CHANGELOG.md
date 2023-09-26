@@ -6,7 +6,7 @@
 ### Added 
 
 - Added basic functionality
-- 
+- Requirements for pypi package
 
 ### Fixed
 
@@ -14,6 +14,7 @@
 
 ### Removed
 
+- useless files (added them to .gitignore)
 
 
 
