@@ -1,15 +1,6 @@
 # Changelog
 ## [Unrealeased]
 
-## [0.0.3]
-### Added 
-
-### Fixed
-
-### Changed
-
-### Removed
-
 ## [0.0.2]
 ### Added 
 
