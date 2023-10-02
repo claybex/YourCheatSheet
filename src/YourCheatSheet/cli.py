@@ -1,9 +1,17 @@
 import json
 from markdown_it import MarkdownIt
+import markdown_to_json
 
 # Read the content of the markdown file
 with open('docs.md', 'r') as file:
     markdown_text = file.read()
+    dictified = markdown_to_json(markdown_text)
+    print(dictified)
+
+
+
+
+
 
 # Initialize the Markdown parser
 md = MarkdownIt()
