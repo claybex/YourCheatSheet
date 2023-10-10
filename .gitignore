@@ -1,7 +1,6 @@
 .git
 venv
 dist
-docs.*
 *json
 __pycache__/
 *.py[cod]

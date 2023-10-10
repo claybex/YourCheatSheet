@@ -9,10 +9,6 @@ with open('docs.md', 'r') as file:
     print(dictified)
 
 
-
-
-
-
 # Initialize the Markdown parser
 md = MarkdownIt()
 
