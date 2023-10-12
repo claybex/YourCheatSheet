@@ -1,7 +1,7 @@
 from sys import argv
 
 class Parser:
-    def __init__(self,json):
+    def __init__(self,json, k1='', k2='', k3=''):
          self.json_object = json
     def main(self):     
         try:
