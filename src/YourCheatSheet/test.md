@@ -11,6 +11,20 @@ Methods for work with strings
 
 ### Pytest
 Pytest - utility to run tests. Tests files and functions should begin from 'test_'.
+Pytest can capture STDOUT and STDERR with capsys:
+
+from greet import welcome
+
+def test_myoutput(capsys):
+    welcome("hello", "world")
+    out, err = capsys.readouterr()
+    assert out == "STDOUT: hello\n"
+    assert err == "STDERR: world\n"
+
+    welcome("next")
+    out, err = capsys.readouterr()
+    assert out == "STDOUT: next\n"
+    assert err == ""
 
 ### Fixture
 @pytest.fixture using to init class and reuse it in other fucntions/

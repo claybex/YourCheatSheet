@@ -1,16 +1,39 @@
 #!/usr/bin/env python3
-import markdown_to_json, pathlib, json 
+import argparse, shutil, pathlib, os
 from sys import argv
 from main import Parser
 
-path_str = argv[1]
-path = pathlib.Path(path_str)
-content = path.read_text()
-json_string = markdown_to_json.jsonify(content)
-json_object = json.loads(json_string)
-# print(json_object)
+db_file = ''
+home_dir = (pathlib.Path.home())
+os_name = os.name
 
-docs = Parser(json_object)
-docs.main()
+##Check user os
+if os_name == 'posix':
+    db_file = f'{home_dir}/.config/YourCheatSheet.md'
+else:
+    print('Version for your OS is not available!')
+    os.exit(1)
+
+##Check if MD file in .config directory
+try:
+    md_file = pathlib.Path(db_file)
+    docs = Parser(md_file)
+    docs.get_data(*argv[1:])
+##Ask user to specified MD file
+except(NotADirectoryError,FileNotFoundError):
+
+    parser = argparse.ArgumentParser(
+        prog='YourCheatSheet',
+        description="Parse your MD CheetSheets",
+        epilog='2023 Open-source license'
+        )
+
+    parser.add_argument('--init','-i', type=str, help='specified your .MD file or folder')
+
+    args = parser.parse_args()
+
+    if args.init:
+        print(f'Going to copy {args.init}')
+        shutil.copy(args.init, db_file)
 
 
