@@ -1,4 +1,3 @@
-from sys import argv
 import json, markdown_to_json, pathlib
 
 class Parser:
